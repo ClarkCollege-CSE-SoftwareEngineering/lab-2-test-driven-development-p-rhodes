@@ -526,7 +526,7 @@ Check the HTML coverage report in `coverage/index.html` to see which lines aren'
 2. Verify that GitHub Actions tests pass (green checkmark)
 3. Submit your repository URL via Canvas
 
-**Due:** Monday of Week 3 (see Canvas for exact date/time)
+**Due:** Tuesday of Week 3 (see Canvas for exact date/time)
 
 ---
 
