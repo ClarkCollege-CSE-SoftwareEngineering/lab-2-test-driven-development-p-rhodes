@@ -676,7 +676,7 @@ items. In total, there are 21 test cases which verify correct functionality for 
    - "npm run test:watch" -> runs a pass of each test, then idles while waiting for changes to the source code files
    - "npm run test:coverage" -> runs a pass of each test, with addtional information provided regarding test coverage
 3. **Functions Implemented:**
-   - applyDiscount -> Accepts a price and a percentage value with with to apply as a discount to the price. Returns a new price with the discount applied.
+   - applyDiscount -> Accepts a price and a percentage value with which to apply as a discount to the price. Returns a new price with the discount applied.
    - calculateTax -> Accepts a price, tax rate, and optional tax exemption (default=false). Returns the dollar amount of taxes ONLY for the given price.
    - calculateTotal -> Accepts a list of shopping cart items, a discount rate, and a tax rate before calculating final totals. Returns a CartTotals interface
    which stores subtotal, discounts, taxes, and final total.
