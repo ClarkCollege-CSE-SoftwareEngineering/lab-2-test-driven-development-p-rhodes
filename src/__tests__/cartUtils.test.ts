@@ -112,7 +112,7 @@ describe("calculateTotal", () => {
   it("only applies tax on taxable items", () => {
     let items: CartItems[]=[];
 
-    items.push({ price: 100, quantity: 1 });
+    items.push({ price: 100, quantity: 1, isTaxExempt: false });
     items.push({ price: 100, quantity: 1, isTaxExempt: true });
 
     expect(calculateTotal(items, 0, 8.5).total).toBe(208.5);

@@ -47,9 +47,8 @@ export function calculateTax(
     return 0;
   }
 
-  const tax=(price*taxRate) / 100;
-  //console.log(tax);
-  return Math.round(tax*100) / 100;
+  const tax=Math.round(((price*taxRate)/100)*100) / 100;
+  return tax;
 }
 
 export function calculateTotal(items: CartItem[], discountRate: number, taxRate: number): number {
@@ -66,14 +65,30 @@ export function calculateTotal(items: CartItem[], discountRate: number, taxRate:
 
   for (let i=0;i<items.length;i++) {
     for (let j=0;j<items[i].quantity;j++) {
-      totals.subtotal+=applyDiscount(items[i].price, discountRate); //refactor into one function call later
-      totals.discount+=items[i].price-applyDiscount(items[i].price, discountRate);
-      if (!items[i].taxExempt) {
-        totals.tax+=calculateTax(applyDiscount(items[i].price, discountRate), taxRate, items[i].isTaxExempt);
+      const subtotal=applyDiscount(items[i].price, discountRate);
+      const discount=items[i].price-subtotal;
+      let tax=0;
+
+      totals.subtotal+=subtotal;
+      totals.discount+=discount;
+
+      if (items[i].isTaxExempt) {
+        tax=calculateTax(subtotal, 0, true);
       }
-      totals.total+=applyDiscount(items[i].price, discountRate)+calculateTax(applyDiscount(items[i].price, discountRate), taxRate);
+
+      else {
+        tax=calculateTax(subtotal, taxRate, false);
+      }
+      
+      totals.tax+=tax;
+
+      totals.total+=subtotal+tax;
     }
   }
+
+  //enable these to output carts to stdout
+  //console.log(`Calculated Total:\nSubtotal: $${totals.subtotal}`);
+  //console.log(`Discount: $${totals.discount}\nTax: $${totals.tax}\nTotal: $${totals.total}`);
 
   return totals;
 }
