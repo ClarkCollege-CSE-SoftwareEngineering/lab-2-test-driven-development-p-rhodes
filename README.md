@@ -668,14 +668,30 @@ Check the HTML coverage report in `coverage/index.html` to see which lines aren'
 
 ## README Additions (Per step 5.2)
 
-1. **Project Description**
-2. **How to run tests**
-3. **Functions Implemented**
-4. **Reflection Section**
-   - **How did TDD Change the way you approached implementing calculateTotal?** 
-   testing
-   - **Which of Fowler's Test Double types did you need for this lab? Why or why not?**
-   - **What's one thing that would have been different if you wrote the implementation first?**
+1. **Project Description:** This is a shopping cart calculator, written in Typescript and utilizing Vitest, for Clark College CSE325: Software Design and Development. Currently,
+the project features 3 functions which are tested independently, and used to calculate subtotal, discounts applied, taxes, and final totals for a shopping cart of 
+items. In total, there are 21 test cases which verify correct functionality for the system.
+2. **How to run tests:** There are 3 test options.
+   - "npm run test" -> runs a pass of each test and outputs the results
+   - "npm run test:watch" -> runs a pass of each test, then idles while waiting for changes to the source code files
+   - "npm run test:coverage" -> runs a pass of each test, with addtional information provided regarding test coverage
+3. **Functions Implemented:**
+   - applyDiscount -> Accepts a price and a percentage value with with to apply as a discount to the price. Returns a new price with the discount applied.
+   - calculateTax -> Accepts a price, tax rate, and optional tax exemption (default=false). Returns the dollar amount of taxes ONLY for the given price.
+   - calculateTotal -> Accepts a list of shopping cart items, a discount rate, and a tax rate before calculating final totals. Returns a CartTotals interface
+   which stores subtotal, discounts, taxes, and final total.
+4. **Reflection Section:**
+   - **How did TDD Change the way you approached implementing calculateTotal?** -> It turned the development of the function into a more iterative process
+   where first I focused only on what the tests required. So with the simpler tests that only require a single item, I only programmed the function to
+   calculate for a single item. As the tests grew in complexity to encapsulate more edge cases, so too did the function. Additionally, there was less 
+   complexity involved with refactoring, as I was allowed to focus all of my attention to it, and not functionality, during the REFACTOR step.
+   - **Which of Fowler's Test Double types did you need for this lab? Why or why not?** -> I used a stub briefly when intially writing a tax calculation.
+   In order to test a correct tax calculation I first used a hardcoded return value to make the test pass. For most of the development, though, mocks were used
+   to verify that the correct test calls were happening, and that they were passing.
+   - **What's one thing that would have been different if you wrote the implementation first?** -> Writing the implementation first, I might have shifted more
+   fluidly between writing (red/green) and refactoring, which could have led to a more bloated function. By focusing on testing first, it allowed me to have a 
+   clear goal in mind when writing a function, as I knew exactly what was needed to make the test pass. By contrast, by writing the implementation first I might 
+   unnecessarily gold-plate the function, and then end up writing tests for the gold-plating.
 
 ## Resources
 
