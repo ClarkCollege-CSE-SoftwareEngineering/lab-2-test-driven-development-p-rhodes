@@ -672,13 +672,13 @@ Check the HTML coverage report in `coverage/index.html` to see which lines aren'
 the project features 3 functions which are tested independently, and used to calculate subtotal, discounts applied, taxes, and final totals for a shopping cart of 
 items. In total, there are 21 test cases which verify correct functionality for the system.
 2. **How to run tests:** There are 3 test options.
-   - "npm run test" -> runs a pass of each test and outputs the results
-   - "npm run test:watch" -> runs a pass of each test, then idles while waiting for changes to the source code files
-   - "npm run test:coverage" -> runs a pass of each test, with addtional information provided regarding test coverage
+   - **npm run test** -> runs a pass of each test and outputs the results
+   - **npm run test:watch** -> runs a pass of each test, then idles while waiting for changes to the source code files
+   - **npm run test:coverage** -> runs a pass of each test, with addtional information provided regarding test coverage
 3. **Functions Implemented:**
-   - applyDiscount -> Accepts a price and a percentage value with which to apply as a discount to the price. Returns a new price with the discount applied.
-   - calculateTax -> Accepts a price, tax rate, and optional tax exemption (default=false). Returns the dollar amount of taxes ONLY for the given price.
-   - calculateTotal -> Accepts a list of shopping cart items, a discount rate, and a tax rate before calculating final totals. Returns a CartTotals interface
+   - **applyDiscount** -> Accepts a price and a percentage value with which to apply as a discount to the price. Returns a new price with the discount applied.
+   - **calculateTax** -> Accepts a price, tax rate, and optional tax exemption (default=false). Returns the dollar amount of taxes ONLY for the given price.
+   - **calculateTotal** -> Accepts a list of shopping cart items, a discount rate, and a tax rate before calculating final totals. Returns a CartTotals interface
    which stores subtotal, discounts, taxes, and final total.
 4. **Reflection Section:**
    - **How did TDD Change the way you approached implementing calculateTotal?** -> It turned the development of the function into a more iterative process
