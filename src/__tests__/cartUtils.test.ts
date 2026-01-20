@@ -70,7 +70,7 @@ describe("calculateTotal", () => {
   });
 
   it("calculates totals for multiple items", () => {
-    let items: CartItems[]=[];
+    let items: CartItem[]=[];
 
     items.push({ price: 100, quantity: 1 });
     items.push({ price: 100, quantity: 1 });
@@ -80,7 +80,7 @@ describe("calculateTotal", () => {
   });
 
   it("calculates totals for items with multiple quantities", () => {
-    let items: CartItems[]=[];
+    let items: CartItem[]=[];
 
     items.push({ price: 100, quantity: 2 });
 
@@ -88,7 +88,7 @@ describe("calculateTotal", () => {
   });
 
   it("applies discount before calculating tax", () => {
-    let items: CartItems[]=[];
+    let items: CartItem[]=[];
 
     items.push({ price: 100, quantity: 1 });
 
@@ -96,7 +96,7 @@ describe("calculateTotal", () => {
   });
 
   it("excludes tax-exempt item from tax calculation", () => {
-    let items: CartItems[]=[];
+    let items: CartItem[]=[];
 
     items.push({ price: 100, quantity: 1, isTaxExempt: true });
 
@@ -104,13 +104,13 @@ describe("calculateTotal", () => {
   });
 
   it("returns 0 if no items are in cart", () => {
-    let items: CartItems[]=[];
+    let items: CartItem[]=[];
 
     expect(calculateTotal(items, 0, 8.5).total).toBe(0);
   });
 
   it("only applies tax on taxable items", () => {
-    let items: CartItems[]=[];
+    let items: CartItem[]=[];
 
     items.push({ price: 100, quantity: 1, isTaxExempt: false });
     items.push({ price: 100, quantity: 1, isTaxExempt: true });
@@ -119,7 +119,7 @@ describe("calculateTotal", () => {
   });
 
   it("correctly calculates the discounts applied", () => {
-    let items: CartItems[]=[];
+    let items: CartItem[]=[];
 
     items.push({ price: 100, quantity: 1 });
 

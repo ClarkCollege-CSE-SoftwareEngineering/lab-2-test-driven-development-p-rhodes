@@ -51,8 +51,8 @@ export function calculateTax(
   return tax;
 }
 
-export function calculateTotal(items: CartItem[], discountRate: number, taxRate: number): number {
-  let totals: CartTotal={
+export function calculateTotal(items: CartItem[], discountRate: number, taxRate: number): CartTotals {
+  let totals: CartTotals={
     subtotal: 0,
     discount: 0,
     tax: 0,
