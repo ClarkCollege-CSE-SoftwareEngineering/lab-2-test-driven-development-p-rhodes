@@ -666,6 +666,17 @@ Check the HTML coverage report in `coverage/index.html` to see which lines aren'
 
 ---
 
+## README Additions (Per step 5.2)
+
+1. **Project Description**
+2. **How to run tests**
+3. **Functions Implemented**
+4. **Reflection Section**
+   - **How did TDD Change the way you approached implementing calculateTotal?** 
+   testing
+   - **Which of Fowler's Test Double types did you need for this lab? Why or why not?**
+   - **What's one thing that would have been different if you wrote the implementation first?**
+
 ## Resources
 
 - 🔗 [Vitest Documentation](https://vitest.dev/)
